@@ -9,7 +9,6 @@ class ProductController extends Controller
 {
     public function index(){
         $products = Product::all();
-        // dd($products);
         return view("products.index", ['products' => $products]);
     }
 
@@ -21,7 +20,7 @@ class ProductController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'qty' => 'required|numeric',
-            'price' => 'required|decimal:2',
+            'price' => 'required|decimal:0,2',
             'description' => 'nullable'
         ]);
 
@@ -38,7 +37,7 @@ class ProductController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'qty' => 'required|numeric',
-            'price' => 'required|decimal:2',
+            'price' => 'required|decimal:0,2',
             'description' => 'nullable'
         ]);
 
