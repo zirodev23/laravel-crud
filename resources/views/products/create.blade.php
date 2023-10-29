@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Create product</h1>
-    <form method="post" action="/product/create">
+    <form method="post" action="{{ route('product.store') }}">
+        @csrf
         <div>
             <label>Name</label>
             <input type="text" name="name" placeholder="Name">
