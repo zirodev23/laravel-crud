@@ -21,6 +21,7 @@ class Product extends Model
     }
 
     static function doSomethingwithACollectionOfProducts(){
+        return false;
         // class function
         // Product::doSomethingwithACollectionOfProducts();
     }

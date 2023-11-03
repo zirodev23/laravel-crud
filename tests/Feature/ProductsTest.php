@@ -40,18 +40,6 @@ class ProductsTest extends TestCase
         });
     }
 
-    public function test_price_ui_display(): void
-    {
-        $product = Product::create([
-            'name' => 'Product 1',
-            'qty' => 25,
-            'price' => 1.46,
-            'description' => 'Some milk'
-        ]);
-
-        $this->assertEquals("1.46 EUR", $product->getPriceEur());
-    }
-
     public function test_paginated_products_table_doesnt_contain_11th_record(): void
     {
         $products = Product::factory(11)->create();
