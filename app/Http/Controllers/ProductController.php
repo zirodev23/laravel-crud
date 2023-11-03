@@ -8,7 +8,8 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::all();
+        // $products = Product::all();
+        $products = Product::paginate(10);
         return view("products.index", ['products' => $products]);
     }
 
@@ -36,6 +37,11 @@ class ProductController extends Controller
         $product->delete();
         return redirect(route('product.index'))->with('success', 'Product deleted successfuly');
     }
+
+    public function view(Product $product){
+        return view('products.view', ['product' => $product]);
+    }
+
 
     private function validateProduct($req){
         return $req->validate([

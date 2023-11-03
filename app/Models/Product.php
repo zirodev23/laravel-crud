@@ -15,4 +15,13 @@ class Product extends Model
         'price',
         'description'
     ];
+
+    public function getPriceEur(){
+        return $this->price . " EUR";
+    }
+
+    static function doSomethingwithACollectionOfProducts(){
+        // class function
+        // Product::doSomethingwithACollectionOfProducts();
+    }
 }
