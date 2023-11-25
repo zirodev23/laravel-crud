@@ -1,12 +1,20 @@
 @extends('layouts.app', ['title' => 'Product: ' . $product->name])
 
 @section('content')
+    <div class="card">
+        <div class="card-header">
+            {{ $product->name }}
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Quantity: {{ $product->qty }}</li>
+            <li class="list-group-item">Price: {{ $product->getPriceEur() }}</li>
+            <li class="list-group-item">Description: {{ $product->description }}</li>
+        </ul>
+    </div>
 
-    <h3>{{ $product->name }}</h3>
-    <ul>
-        <li>{{ $product->qty }}</li>
-        <li>{{ $product->getPriceEur() }}</li>
-        <li>{{ $product->description }}</li>
-    </ul>
-    <a href="/products">Back to all products</a>
+    <p>
+        <a href="/products" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+            Back to all products
+        </a>
+    </p>
 @endsection
