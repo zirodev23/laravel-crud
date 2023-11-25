@@ -1,5 +1,6 @@
-@include('common.head', ['title' => 'Create product'])
-<body>
+@extends('layouts.app', ['title' => 'Create product'])
+
+@section('content')
     <h1>Create product</h1>
     <div>
         @if($errors->any())
@@ -10,7 +11,7 @@
             </ul>
         @endif
     </div>
-    <form method="post" action="{{ route('product.store') }}">
+    <form method="post" action="{{ route('products.store') }}">
         @csrf
         <div>
             <label>Name</label>
@@ -32,5 +33,5 @@
             <input type="submit" value="Save a New Product">
         </div>
     </form>
-</body>
-</html>
+    <a href="/products">Back to all products</a>
+@endsection

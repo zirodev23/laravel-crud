@@ -1,5 +1,6 @@
-@include('common.head', ['title' => 'Edit product'])
-<body>
+@extends('layouts.app', ['title' => 'Edit product'])
+
+@section('content')
     <h1>Edit product</h1>
     <div>
         @if($errors->any())
@@ -10,7 +11,7 @@
             </ul>
         @endif
     </div>
-    <form method="post" action="{{ route('product.update', ['product' => $product]) }}">
+    <form method="post" action="{{ route('products.update', ['product' => $product]) }}">
         @csrf
         @method('put')
         <div>
@@ -33,5 +34,5 @@
             <input type="submit" value="Update">
         </div>
     </form>
-</body>
-</html>
+    <a href="/products">Back to all products</a>
+@endsection

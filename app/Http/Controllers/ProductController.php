@@ -20,7 +20,7 @@ class ProductController extends Controller
     public function store (Request $request){
         $data = $this->validateProduct($request);
         $newProduct = Product::create($data);
-        return redirect(route('product.index'))->with('success', 'Product created successfuly');
+        return redirect(route('products.index'))->with('success', 'Product created successfuly');
     }
 
     public function edit(Product $product){
@@ -30,12 +30,12 @@ class ProductController extends Controller
     public function update(Product $product, Request $request){
         $data = $this->validateProduct($request);
         $product->update($data);
-        return redirect(route('product.index'))->with('success', 'Product updated successfuly');
+        return redirect(route('products.index'))->with('success', 'Product updated successfuly');
     }
 
     public function destroy(Product $product){
         $product->delete();
-        return redirect(route('product.index'))->with('success', 'Product deleted successfuly');
+        return redirect(route('products.index'))->with('success', 'Product deleted successfuly');
     }
 
     public function view(Product $product){

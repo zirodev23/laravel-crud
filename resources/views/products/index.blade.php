@@ -1,5 +1,6 @@
-@include('common.head', ['title' => 'Products'])
-<body>
+@extends('layouts.app', ['title' => 'All products'])
+
+@section('content')
     <h1>Products</h1>
     
     <div>
@@ -11,7 +12,7 @@
     </div>
 
     <div>
-        <a href="{{ route('product.create') }}">New product</a>
+        <a href="{{ route('products.create') }}">New product</a>
     </div>
 
     <div>
@@ -37,13 +38,13 @@
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->description }}</td>
                         <td>
-                            <a href="{{ route('product.view', ['product' => $product]) }}">View</a>
+                            <a href="{{ route('products.view', ['product' => $product]) }}">View</a>
                         </td>
                         <td>
-                            <a href="{{ route('product.edit', ['product' => $product]) }}">Edit</a>
+                            <a href="{{ route('products.edit', ['product' => $product]) }}">Edit</a>
                         </td>
                         <td>
-                            <form method="post" action="{{ route('product.destroy', ['product' => $product]) }}">
+                            <form method="post" action="{{ route('products.destroy', ['product' => $product]) }}">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" value="Delete">
@@ -54,5 +55,4 @@
             </table>
         @endif
     </div>
-</body>
-</html>
+@endsection
