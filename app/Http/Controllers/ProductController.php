@@ -38,7 +38,7 @@ class ProductController extends Controller
         return redirect(route('products.index'))->with('success', __('products.message_destroy_success'));
     }
 
-    public function view(Product $product){
+    public function show(Product $product){
         return view('products.view', ['product' => $product]);
     }
 
