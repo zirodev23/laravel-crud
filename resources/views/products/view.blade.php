@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Product: ' . $product->name])
+@extends('layouts.app', ['title' => 'Produkts: ' . $product->name])
 
 @section('content')
     <div class="card">
@@ -6,15 +6,15 @@
             {{ $product->name }}
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Quantity: {{ $product->qty }}</li>
-            <li class="list-group-item">Price: {{ $product->getPriceEur() }}</li>
-            <li class="list-group-item">Description: {{ $product->description }}</li>
+            <li class="list-group-item">Daudzums: {{ $product->qty }}</li>
+            <li class="list-group-item">Cena: {{ $product->getPriceEur() }}</li>
+            <li class="list-group-item">Apraksts: {{ $product->description }}</li>
         </ul>
     </div>
 
     <p>
         <a href="/products" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-            Back to all products
+            Visi produkti
         </a>
     </p>
 @endsection
