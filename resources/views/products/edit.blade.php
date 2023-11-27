@@ -37,7 +37,7 @@
 
     <p>
         <a href="/products" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-            Visi produkti
+            {{ __('products.all_products_link') }}
         </a>
     </p>
 @endsection
