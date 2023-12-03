@@ -29,7 +29,8 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+        $order = Order::create($request->all());
+        return response()->json(['html' => view('orders.record', ['order' => $order])->render()]);
     }
 
     /**

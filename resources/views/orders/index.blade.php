@@ -34,6 +34,4 @@
             <input type="submit" id="submitOrder" class="btn btn-primary" value="Saglabāt">
         </div>
     </form>
-
-
 @endsection

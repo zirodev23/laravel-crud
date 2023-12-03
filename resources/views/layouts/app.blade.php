@@ -19,5 +19,7 @@
             @yield('content')
         </div>
     </div>
+
+    <script src="custom.js"></script>
 </body>
 </html>
